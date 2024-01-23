@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Job Description Form</title>
+</head>
+<body>
+    <fieldset>
+    <legend>
+    <h1>Job Description Form</h1>
+    </legend>
+
+    <!-- Personal Details like name,gender,etc -->
+    <form id="registrationForm" onsubmit="submitForm(event)">
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" placeholder="Enter your first name" required>
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" placeholder="Enter your last name" required>
+        </div>
+        <div>
+            <label for="birthday">Date of Birth:</label>
+            <input type="date" id="birthday" name="birthday">
+        </div>
+        <div>
+            <label for="gender">Gender:</label>
+            <select name="gender">
+            <option value="#">Please select one</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="caste">Caste:</label>
+            <select name="caste">
+            <option value="#">Please select one</option>
+            <option value="#">General</option>
+            <option value="#">OBC</option>
+            <option value="#" id="scstDetails">SC</option>
+            <option value="#" id="scstDetails">ST</option>
+            </select>
+            <div id="scstDetails" onclick="show()">
+                <label for="certificateNumber">Certificate Number:</label>
+                <input type="text" id="certificateNumber" name="certificateNumber" placeholder="Ignore if you choose General/OBC">
+                <label for="otherDetails">Other Details:</label>
+                <input type="text" id="otherDetails" name="otherDetails" placeholder="Ignore if you choose General/OBC">
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email (ashish@gmail.com)" required>
+            <div class="error"></div>
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="tel" placeholder="Enter your phone number" required>
+            <div class="error"></div>
+        </div>
+
+        <!-- Educational Information -->
+        <div>
+            <label for="qualification">Highest Qualification:</label>
+            <select name="" id="">
+                <option value="#">High School</option>
+                <option value="#">Intermediate</option>
+                <option value="#">Graduation</option>
+                <option value="#">Master's</option>
+            </select>
+            <div id="mastersForm" style="display: none;">
+                <label for="extraSkills">Extra Skills:</label>
+                <input type="text" id="extraSkills" name="extraSkills">
+            
+                <label for="communicationSkill">Communication Skill Rating:</label>
+                <input type="number" id="communicationSkill" name="communicationSkill" min="1" max="10">
+            
+                <label for="languagesKnown">Languages Known:</label>
+                <input type="text" id="languagesKnown" name="languagesKnown">
+              </div>
+        </div>
+        <div>
+            <label for="passingYear">Year of Passing:</label>
+            <input type="number" id="passingYear" placeholder="Write passing year" required>
+        </div>
+        <div>
+            <label for="percentage">Percentage/CGPA:</label>
+            <input type="number" id="percentage" placeholder="Write in number only" required>
+        </div>
+
+        <!-- Job Preferences -->
+        <div>
+         <label for="department">Department applying for:</label>
+            <select id="department" required>
+               <option value="#">Full Stack</option>
+               <option value="#">Frontend</option>
+               <option value="#">Backend</option>
+               <option value="#">Database</option>
+               <option value="#">Data Science</option>
+               <option value="#">Data Analyst</option>
+            </select>
+        </label> 
+        </div>
+        <div>
+            <label for="jobLocation">Preferred Job Location:</label>
+            <input type="text" id="jobLocation" placeholder="Write the name of the city" required>
+        </div>
+
+        <!-- Document Upload -->
+        <div>
+            <label for="document">Upload Educational Certificate:</label>
+            <input type="file" id="document" accept=".pdf, .doc, .docx" required>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div>
+            <input type="checkbox" id="agreeTerms" required>
+            <label>
+                 I agree to the terms and conditions
+            </label>
+        </div>
+
+        <!-- For Error -->
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <!-- Form Submission Button -->
+        <button type="submit">Submit</button>
+    </form>
+</fieldset>
+
+    <script src="script.js"></script>
+</body>
+</html>
